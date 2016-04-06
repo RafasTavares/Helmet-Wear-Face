@@ -125,13 +125,11 @@ public class MyWatchFace extends CanvasWatchFaceService {
             Resources resources = MyWatchFace.this.getResources();
             mYOffset = resources.getDimension(R.dimen.digital_y_offset);
 
-
             Drawable backgroundDrawable = resources.getDrawable(R.drawable.bg, null);
             mBackgroundBitmap = ((BitmapDrawable) backgroundDrawable).getBitmap();
 
-
             mTextPaint = new Paint();
-            mTextPaint = createTextPaint(resources.getColor(R.color.red));
+            mTextPaint = createTextPaint(resources.getColor(R.color.blue));
 
             mTime = new Time();
         }
@@ -261,7 +259,7 @@ public class MyWatchFace extends CanvasWatchFaceService {
             } else {
                 canvas.drawBitmap(mBackgroundScaledBitmap, 0, 0, null);
 
-                // canvas.drawRect(0, 0, bounds.width(), bounds.height(), mBackgroundPaint);
+                 canvas.drawRect(0, 0, bounds.width(), bounds.height(), null);
             }
 
             // Draw H:MM in ambient mode or H:MM:SS in interactive mode.
